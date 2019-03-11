@@ -38,12 +38,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Widgets
-                <small>Preview page</small>
+                Báo Cáo Sơ Bộ
+                <small></small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Widgets</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+                <li class="active">Báo Cáo</li>
             </ol>
         </section>
 

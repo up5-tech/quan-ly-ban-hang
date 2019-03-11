@@ -7,7 +7,7 @@ class Home extends Controller
 	public function index()
 	{
  	    echo view('header');
-        echo view('product');
+        echo view('report');
 	}
 
 	//--------------------------------------------------------------------
