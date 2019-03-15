@@ -1,0 +1,1 @@
+<h1>this is views/pages/bills <?= $data ?></h1>

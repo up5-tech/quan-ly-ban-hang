@@ -32,9 +32,9 @@ class Database extends \CodeIgniter\Database\Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => '',
+		'username' => 'root',
 		'password' => '',
-		'database' => '',
+		'database' => 'db_shop',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
@@ -51,6 +51,7 @@ class Database extends \CodeIgniter\Database\Config
 		'port'     => 3306,
 	];
 
+	public $db='default';
 	/**
 	 * This database connection is used when
 	 * running PHPUnit database tests.
