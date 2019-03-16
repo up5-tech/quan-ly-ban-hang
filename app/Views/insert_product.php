@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | General Form Elements</title>
-    <!-- Tell the browser to be responsive to screen width -->
+    <title>CHỈNH SỬA SẢN PHẨM</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -84,16 +83,8 @@
                                     <label for="name_img">Ảnh</label>
                                     <input type="file" id="name_img" name="name_img">
                                     <p class="help-block">Ảnh sản phẩm</p>
-
                                 </div>
 
-
-                                <!--
-                                ---------------------------------------------------------------
-                                -->
-
-
-                                <!--- -->
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
@@ -116,75 +107,76 @@
                     <h3 align="center">XÓA SẢN PHẨM</h3>
                     <hr>
 
-                    <!--
+                    <div class="box-body">
 
-                    phan cach them-xoa sp
-                    -->
-
-                    <form role="form" method="POST"
-                          action="http://localhost/quan-ly-ban-hang/public/index.php/products/add_to_db">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <h3><label for="">Tên Sản Phẩm</label></h3>
-                                <select>
-
-                                    <?php
-                                    $model = new \App\Controllers\Products();
-                                    $show_product = $model->show_all_product();
-                                    foreach ($show_product as $showproduct) {
-                                        ?>
-                                        <option value="" name="<?php echo $showproduct['name']; ?>">
-                                        <?php echo $showproduct['name']; ?>
-                                        </option><?php
-                                    }
-                                    ?>
-
-                                </select>
-
-                            </div>
-
-                            <div class="form-group">
-                                <label for="">Số Lượng</label>
-                                <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
-                                       name="quantity">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="">Giá Nhập</label>
-                                <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
-                                       name="price_import">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="">Giá Bán</label>
-                                <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
-                                       name="price_export">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="">Ghi Chú</label>
-                                <input type="text" class="form-control" name="note">
-                            </div>
-
-
+                        <br>
+                        <B><h4 align="left">ID cần xóa</h4></B>
+                        <form method="get"
+                              action=" http://localhost/quan-ly-ban-hang/public/index.php/products/delete_product">
+                            <input name="id_del">
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Xóa</button>
                             </div>
 
-                    </form>
+                        </form>
 
+                        <div class="form-group">
+                            <h3><label for="">BẢNG THÔNG TIN SẢN PHẨM</label></h3>
+                            <table border=2px width="100%">
+                                <tr>
+                                    <td align="center">ID</td>
+                                    <td align="center">TÊN SP</td>
+                                    <td align="center">SỐ LƯỢNG</td>
+                                    <td align="center">GIÁ NHẬP</td>
+                                    <td align="center">GIÁ XUẤT</td>
+                                    <td align="center">CHỨC NĂNG</td>
+                                </tr>
 
-                    <!--
-                            phan canh
+                                <?php
+                                $model = new \App\Controllers\Products();
+                                $show_product = $model->show_all_product();
+                                $count = 0;
+                                foreach ($show_product
 
-                    -->
-                    </aside>
-                    <div class="control-sidebar-bg"></div>
+                                         as $product) {
+                                    $count++;
+                                    ?>
+                                    <tr>
+                                        <td align="center"><?php echo $product['id']; ?></td>
+                                        <td align="center"><?php echo $product['name']; ?></td>
+                                        <td align="center"><?php echo $product['quantity']; ?></td>
+                                        <td align="center"><?php echo $product['price_import']; ?></td>
+                                        <td align="center"><?php echo $product['price_export']; ?></td>
+                                        <!--  button xóa-sửa làm khongbiet lam T_T-->
+                                        <td align="center">
+                                            <form>
+                                                <button>Xóa</button>
+                                                <button>Sửa</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </header>
+                <!--                </form>-->
+                <!--
+                        phan canh
 
+                -->
+                </aside>
+                <div class="control-sidebar-bg"></div>
+            </div>
+</div>
+</section>
+</header>
+</div>
+
+<!----------- -->
+
+
+<!-- -->
 </body>
 </html>
 
