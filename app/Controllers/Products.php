@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 use App\Models\ProductModel;
 use CodeIgniter\Controller;
-use http\Message;
+
 
 class Products extends Controller
 {
     public function index()
     {
-        echo 'index product ';
+        $show_product = $this->show_all_product();
     }
 
     public function insert_product()
@@ -20,15 +20,10 @@ class Products extends Controller
 
     public function show_all_product()
     {
-        echo 'Show all product - chưa hoàn thiện ';
-
         $model = new ProductModel();
         $builder = $model->setTable('products')->select('name');
-        $query = $builder->get();
+        $query = $builder->get()->getResultArray();
         return $query;
-//        echo '<pre>';
-//        print_r($query->getResultArray());
-//        echo '<pre>';
     }
 
     public function add_to_db()

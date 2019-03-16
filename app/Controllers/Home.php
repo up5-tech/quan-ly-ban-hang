@@ -1,7 +1,6 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\ProductModel;
 
 class Home extends Controller
 {

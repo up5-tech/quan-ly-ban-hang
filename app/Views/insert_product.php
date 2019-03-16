@@ -44,7 +44,7 @@
                                 <button type="" data-width="75" data-height="50"> << Quay về <<</button>
                                 <br><br>
                             </form>
-                            <h3 align="center" >THÊM SẢN PHẨM</h3>
+                            <h3 align="center">THÊM SẢN PHẨM</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -125,13 +125,22 @@
                           action="http://localhost/quan-ly-ban-hang/public/index.php/products/add_to_db">
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="">Tên Sản Phẩm  </label>
-                                <select name="name">
-                                    <option value="volvo"></option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
+                                <h3><label for="">Tên Sản Phẩm</label></h3>
+                                <select>
+
+                                    <?php
+                                    $model = new \App\Controllers\Products();
+                                    $show_product = $model->show_all_product();
+                                    foreach ($show_product as $showproduct) {
+                                        ?>
+                                        <option value="" name="<?php echo $showproduct['name']; ?>">
+                                        <?php echo $showproduct['name']; ?>
+                                        </option><?php
+                                    }
+                                    ?>
+
                                 </select>
+
                             </div>
 
                             <div class="form-group">
