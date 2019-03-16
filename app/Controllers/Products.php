@@ -12,11 +12,18 @@ class Products extends Controller
     public function index()
     {
         $show_product = $this->show_all_product();
+        $count_product=$this->count_product();
     }
 
     public function insert_product() //display
     {
         echo view('insert_product');
+    }
+    public function count_product()
+    {
+        $model=new ProductModel();
+        $count=$model->countAll();
+        return $count;
     }
     public function show_all_product()
     {
