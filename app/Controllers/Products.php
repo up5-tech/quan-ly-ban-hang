@@ -12,10 +12,12 @@ class Products extends Controller
     public function index()
     {
         $show_product = $this->show_all_product();
-
-
     }
 
+    public function insert_product() //display
+    {
+        echo view('insert_product');
+    }
     public function show_all_product()
     {
         $model = new ProductModel();

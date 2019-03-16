@@ -6,8 +6,8 @@ class Home extends Controller
 {
     public function index()
     {
-        echo 'is this home?';
-
+        echo view('header');
+        echo view('main');
     }
 
 
