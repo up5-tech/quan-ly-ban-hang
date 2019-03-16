@@ -10,7 +10,6 @@ use CodeIgniter\Model;
 
 class BillModel extends Model
 {
-    protected $table = 'bills';
 
 }
 

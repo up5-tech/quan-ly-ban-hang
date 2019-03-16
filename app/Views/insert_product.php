@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,11 +40,16 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">THÊM SẢN PHẨM</h3>
+                            <form action="http://localhost/quan-ly-ban-hang/public/">
+                                <button type="" data-width="75" data-height="50"> << Quay về <<</button>
+                                <br><br>
+                            </form>
+                            <h3 align="center" >THÊM SẢN PHẨM</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="http://localhost/quan-ly-ban-hang/public/index.php/products/insert_product">
+                        <form role="form" method="POST"
+                              action="http://localhost/quan-ly-ban-hang/public/index.php/products/add_to_db">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="">Tên Sản Phẩm</label>
@@ -53,17 +58,20 @@
 
                                 <div class="form-group">
                                     <label for="">Số Lượng</label>
-                                    <input type="text" onkeypress=" return isNumberKey(event)" class="form-control" name="quantity">
+                                    <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
+                                           name="quantity">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Giá Nhập</label>
-                                    <input type="text" onkeypress=" return isNumberKey(event)" class="form-control" name="price_import">
+                                    <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
+                                           name="price_import">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Giá Bán</label>
-                                    <input type="text" onkeypress=" return isNumberKey(event)" class="form-control" name="price_export">
+                                    <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
+                                           name="price_export">
                                 </div>
 
                                 <div class="form-group">
@@ -71,16 +79,25 @@
                                     <input type="text" class="form-control" name="note">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Ảnh</label>
-                                    <input type="file" id="exampleInputFile">
 
+                                <div class="form-group">
+                                    <label for="name_img">Ảnh</label>
+                                    <input type="file" id="name_img" name="name_img">
                                     <p class="help-block">Ảnh sản phẩm</p>
+
                                 </div>
 
+
+                                <!--
+                                ---------------------------------------------------------------
+                                -->
+
+
+                                <!--- -->
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
+
                         </form>
                     </div>
 
@@ -94,12 +111,71 @@
                             return true;
                         }
                     </script>
+
+                    <hr>
+                    <h3 align="center">XÓA SẢN PHẨM</h3>
+                    <hr>
+
+                    <!--
+
+                    phan cach them-xoa sp
+                    -->
+
+                    <form role="form" method="POST"
+                          action="http://localhost/quan-ly-ban-hang/public/index.php/products/add_to_db">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="">Tên Sản Phẩm  </label>
+                                <select name="name">
+                                    <option value="volvo"></option>
+                                    <option value="saab">Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Số Lượng</label>
+                                <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
+                                       name="quantity">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Giá Nhập</label>
+                                <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
+                                       name="price_import">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Giá Bán</label>
+                                <input type="text" onkeypress=" return isNumberKey(event)" class="form-control"
+                                       name="price_export">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Ghi Chú</label>
+                                <input type="text" class="form-control" name="note">
+                            </div>
+
+
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+
+                    </form>
+
+
+                    <!--
+                            phan canh
+
+                    -->
                     </aside>
                     <div class="control-sidebar-bg"></div>
                 </div>
             </div>
         </section>
     </header>
+
 </body>
 </html>
 

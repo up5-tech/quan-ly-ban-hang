@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: TieuCa
- * Date: 11/03/2019
- * Time: 2:05 PM
- */
+
 namespace App\Models;
 use CodeIgniter\Model;
 
@@ -16,7 +11,7 @@ class ProductModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['product_name','import','cost_import','cost_export'];
+    protected $allowedFields =['name','quantity','price_import','price_export','image_name','note'];
     protected $useTimestamps = false;
 
     protected $validationRules    = [];

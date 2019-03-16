@@ -1,5 +1,8 @@
 <?php namespace App\Controllers;
+
 use CodeIgniter\Controller;
+use App\Models\ProductModel;
+
 class Home extends Controller
 {
     public function index()
@@ -7,5 +10,6 @@ class Home extends Controller
         echo view('header');
         echo view('main');
     }
+
 
 }
