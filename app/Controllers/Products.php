@@ -46,6 +46,7 @@ class Products extends Controller
         echo view('insert_product');
     }
 
+
     public function add_to_db()
     {
         $model = new ProductModel();
