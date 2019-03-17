@@ -78,17 +78,21 @@
                                     <input type="text" class="form-control" name="note">
                                 </div>
 
-
                                 <div class="form-group">
                                     <label for="name_img">Ảnh</label>
                                     <input type="file" id="name_img" name="name_img">
                                     <p class="help-block">Ảnh sản phẩm</p>
                                 </div>
+                                <!--
+                                -->
+
+                                <!-- -->
+                                <!-- -->
 
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
-
+                        </form>
                         </form>
                     </div>
 
@@ -110,7 +114,9 @@
                     <div class="box-body">
 
                         <br>
-                        <B><h4 align="left">ID cần xóa</h4></B>
+                        <B>
+                            <h4 align="left">ID cần xóa</h4>
+                        </B>
                         <form method="get"
                               action=" http://localhost/quan-ly-ban-hang/public/index.php/products/delete_product">
                             <input name="id_del">
@@ -129,6 +135,7 @@
                                     <td align="center">SỐ LƯỢNG</td>
                                     <td align="center">GIÁ NHẬP</td>
                                     <td align="center">GIÁ XUẤT</td>
+                                    <td align="center">HÌNH ẢNH</td>
                                     <td align="center">CHỨC NĂNG</td>
                                 </tr>
 
@@ -137,9 +144,7 @@
                                 $show_product = $model->show_all_product();
                                 $count = 0;
                                 foreach ($show_product
-
                                          as $product) {
-                                    $count++;
                                     ?>
                                     <tr>
                                         <td align="center"><?php echo $product['id']; ?></td>
@@ -147,11 +152,13 @@
                                         <td align="center"><?php echo $product['quantity']; ?></td>
                                         <td align="center"><?php echo $product['price_import']; ?></td>
                                         <td align="center"><?php echo $product['price_export']; ?></td>
+                                        <td align="center"><?php echo $product['image_name']; ?></td>
+
                                         <!--  button xóa-sửa làm khongbiet lam T_T-->
                                         <td align="center">
                                             <form>
-                                                <button>Xóa</button>
-                                                <button>Sửa</button>
+                                                <button href="#">Xóa</button>
+                                                <button href="#">Sửa</button>
                                             </form>
                                         </td>
                                     </tr>

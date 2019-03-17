@@ -48,8 +48,13 @@ class Products extends Controller
 
     public function add_to_db()
     {
-
         $model = new ProductModel();
+        if($_POST['name_img']==null)
+        {
+            $name_img='none';
+        }else{
+            $name_img=time().$_POST['name_img'];
+        }
         $data =
             [
                 'name' => $_POST['name'],
@@ -57,7 +62,7 @@ class Products extends Controller
                 'price_import' => $_POST['price_import'],
                 'price_export' => $_POST['price_export'],
                 'note' => $_POST['note'],
-                'image_name' => $_POST['name_img']
+                'image_name' => $name_img
             ];
 
         $ck = $this->check_product($data['name'], 'name');
