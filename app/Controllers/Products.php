@@ -39,11 +39,13 @@ class Products extends Controller
         $id_del = $_GET['id_del'];
         $ck = $this->check_product($id_del, 'id');
         $model = new ProductModel();
-
         if ($ck != 0) {
             $model->delete($id_del, true);
         }
         echo view('insert_product');
+
+
+        // cần update function thêm => xóa details và bills có id products
     }
 
     public function add_to_db()
