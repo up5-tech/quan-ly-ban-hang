@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 
-
     <script src="dist/js/adminlte.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -276,7 +275,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs">Admin NTC</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -350,11 +349,10 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Hệ Thống Quản Lý</li>
-
                 <li class="treeview">
                     <a href="">
 
-                    <!--                    <a href="http://localhost/quan-ly-ban-hang/public/index.php/products/index">-->
+                        <!--                    <a href="http://localhost/quan-ly-ban-hang/public/index.php/products/index">-->
                         <i class="fa fa-files-o"></i>
                         <span>SẢN PHẨM</span>
                         <span class="pull-right-container">
@@ -362,8 +360,10 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo $bare_url;?>index.php/products/show_all_product"><i class="fa fa-circle-o"></i>TẤT CẢ SP</a></li>
-                        <li><a href="<?php echo $bare_url;?>index.php/products/insert_product"><i class="fa fa-circle-o"></i> CẬP NHẬT SẢN PHẨM</a></li>
+                        <li><a href="<?php echo $bare_url; ?>index.php/products/show_all_product"><i
+                                        class="fa fa-circle-o"></i>TẤT CẢ SP</a></li>
+                        <li><a href="<?php echo $bare_url; ?>index.php/products/insert_product"><i
+                                        class="fa fa-circle-o"></i> CẬP NHẬT SẢN PHẨM</a></li>
                     </ul>
                 </li>
                 <li>

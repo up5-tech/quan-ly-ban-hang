@@ -13,6 +13,7 @@ class Products extends Controller
     {
         $show_product = $this->show_all_product();
         $count_product=$this->count_product();
+
     }
 
     public function insert_product() //display
@@ -40,12 +41,10 @@ class Products extends Controller
         $model = new ProductModel();
 
         if ($ck != 0) {
-            //insert
             $model->delete($id_del, true);
         }
         echo view('insert_product');
     }
-
 
     public function add_to_db()
     {

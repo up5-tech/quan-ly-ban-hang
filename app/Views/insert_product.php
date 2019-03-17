@@ -83,14 +83,8 @@
                                     <input type="file" id="name_img" name="name_img">
                                     <p class="help-block">Ảnh sản phẩm</p>
                                 </div>
-                                <!--
-                                -->
-
-                                <!-- -->
-                                <!-- -->
-
                                 <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary" onclick="">Submit</button>
                                 </div>
                         </form>
                         </form>
@@ -142,7 +136,6 @@
                                 <?php
                                 $model = new \App\Controllers\Products();
                                 $show_product = $model->show_all_product();
-                                $count = 0;
                                 foreach ($show_product
                                          as $product) {
                                     ?>
@@ -156,10 +149,11 @@
 
                                         <!--  button xóa-sửa làm khongbiet lam T_T-->
                                         <td align="center">
-                                            <form>
-                                                <button href="#">Xóa</button>
-                                                <button href="#">Sửa</button>
-                                            </form>
+                                            <input type="radio">Del
+<!--                                            <form>-->
+<!--                                                <button href="http://localhost/quan-ly-ban-hang/public/index.php/products/insert_product?">Xóa</button>-->
+<!--                                                <button href="http://localhost/quan-ly-ban-hang/public/index.php/products/insert_product?">Sửa</button>-->
+<!--                                            </form>-->
                                         </td>
                                     </tr>
                                 <?php } ?>
