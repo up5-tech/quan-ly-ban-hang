@@ -2,11 +2,11 @@
 
 use CodeIgniter\Controller;
 
-class Home extends Controller
+class Details extends Controller
 {
     public function index()
     {
-        echo view('header');
-        echo view('main');
+        echo 'its details';
     }
+
 }

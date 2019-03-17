@@ -360,7 +360,7 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo $bare_url; ?>index.php/products/show_all_product"><i
+                        <li><a href="#"><i
                                         class="fa fa-circle-o"></i>TẤT CẢ SP</a></li>
                         <li><a href="<?php echo $bare_url; ?>index.php/products/insert_product"><i
                                         class="fa fa-circle-o"></i> CẬP NHẬT SẢN PHẨM</a></li>

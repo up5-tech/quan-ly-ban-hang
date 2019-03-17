@@ -3,15 +3,15 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class BillModel extends Model
+class DetailModel extends Model
 {
-    protected $table = 'bills';
+    protected $table = 'details';
     protected $primaryKey = 'id';
 
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields =['personnel_id','date_of_sale','cus_id','total'];
+    protected $allowedFields =['product_id','quantity','price','total'];
     protected $useTimestamps = false;
 
     protected $validationRules    = [];
@@ -29,4 +29,3 @@ class BillModel extends Model
     protected $validation=[];
 
 }
-

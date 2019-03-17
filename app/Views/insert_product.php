@@ -43,7 +43,10 @@
                                 <button type="" data-width="75" data-height="50"> << Quay về <<</button>
                                 <br><br>
                             </form>
-                            <h3 align="center">THÊM SẢN PHẨM</h3>
+                            <a href="http://localhost/quan-ly-ban-hang/public/">
+                                <center><b><img src="../../image/circle.png" width="500" height="150"></b></center>
+                            </a><br>
+                            <u><h4 align="left">THÊM SẢN PHẨM</h4></u>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -102,14 +105,14 @@
                     </script>
 
                     <hr>
-                    <h3 align="center">XÓA SẢN PHẨM</h3>
+                    <u><h4 align="left">XÓA SẢN PHẨM</h4></u>
                     <hr>
 
                     <div class="box-body">
 
                         <br>
                         <B>
-                            <h4 align="left">ID cần xóa</h4>
+                            <h4 align="left">XÓA THEO ID</h4>
                         </B>
                         <form method="get"
                               action=" http://localhost/quan-ly-ban-hang/public/index.php/products/delete_product">
@@ -122,7 +125,7 @@
 
                         <div class="form-group">
                             <h3><label for="">BẢNG THÔNG TIN SẢN PHẨM</label></h3>
-                            <table border=2px width="100%">
+                            <table border="1" width="100%">
                                 <tr>
                                     <td align="center">ID</td>
                                     <td align="center">TÊN SP</td>
@@ -130,6 +133,7 @@
                                     <td align="center">GIÁ NHẬP</td>
                                     <td align="center">GIÁ XUẤT</td>
                                     <td align="center">HÌNH ẢNH</td>
+                                    <td align="center">GHI CHÚ</td>
                                     <td align="center">CHỨC NĂNG</td>
                                 </tr>
 
@@ -145,15 +149,21 @@
                                         <td align="center"><?php echo $product['quantity']; ?></td>
                                         <td align="center"><?php echo $product['price_import']; ?></td>
                                         <td align="center"><?php echo $product['price_export']; ?></td>
-                                        <td align="center"><?php echo $product['image_name']; ?></td>
-
+                                        <td align="center"><br>
+                                            <img src="../../image/<?php echo $product['image_name'] ?>" width=75
+                                                 height=75>
+                                            <br><?php echo $product['image_name']; ?>
+                                        </td>
+                                        <td align="center"><?php echo $product['note']; ?></td>
                                         <!--  button xóa-sửa làm khongbiet lam T_T-->
+
                                         <td align="center">
-                                            <input type="radio">Del
-<!--                                            <form>-->
-<!--                                                <button href="http://localhost/quan-ly-ban-hang/public/index.php/products/insert_product?">Xóa</button>-->
-<!--                                                <button href="http://localhost/quan-ly-ban-hang/public/index.php/products/insert_product?">Sửa</button>-->
-<!--                                            </form>-->
+                                            <form action="http://localhost/quan-ly-ban-hang/public/index.php/products/delete_product"
+                                                  method="get">
+                                                <input hidden name="id_del" value="<?php echo $product['id']; ?>"><br>
+                                                <button type="submit" data-width="45" data-height="50">Xóa</button>
+                                                <br><br>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php } ?>

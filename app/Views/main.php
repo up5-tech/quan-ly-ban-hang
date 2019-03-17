@@ -92,7 +92,6 @@
                                     echo $bill->count_bill();
                                     ?>
                                 </h3>
-
                                 <p>Lượng Đơn Hàng</p>
                             </div>
                             <div class="icon">
@@ -106,15 +105,12 @@
                         <!-- small box -->
                         <div class="small-box bg-yellow">
                             <div class="inner">
-                                <h3>
                                     <h3>
                                         <?php
                                         $cus=new \App\Controllers\Customers();
                                         echo $cus->count_customer();
                                         ?>
                                     </h3>
-                                </h3>
-
                                 <p>Số Lượng Khách Hàng</p>
                             </div>
                             <div class="icon">
