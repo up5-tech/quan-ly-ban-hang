@@ -6,7 +6,6 @@ use App\Models\DetailModel;
 use App\Models\ProductModel;
 use CodeIgniter\Controller;
 
-// insert_product.php = xem-sửa-xóa-thêm data
 
 class Products extends Controller
 {
@@ -14,7 +13,7 @@ class Products extends Controller
     {
         $show_product = $this->show_all_product();
         $count_product = $this->count_product();
-
+        $edit_product = $this->edit_product();
     }
 
     public function insert_product() //display
@@ -37,31 +36,37 @@ class Products extends Controller
         return $query;
     }
 
+    public function view_data()
+    {
+        echo view('header');
+        echo view('data');
+    }
+
     public function delete_product()
     {
+
         $id_del = $_GET['id_del'];
         $ck = $this->check_product($id_del, 'id');
         $model = new ProductModel();
-        $ck_detail = $this->check_detail($id_del);
-
+        $this->delete_detail($id_del);
         if ($ck == 1) {
             $model->delete($id_del, true);
         }
-
-        echo view('insert_product');
+        echo view('header');
+        echo view('data');
     }
 
-    public function check_detail($id_del)
+    public function delete_detail($product_id) // xóa product trong details
     {
-        $model_detail = new DetailModel();
-        $query = $model_detail->select('id')->where('product_id=', $id_del);
-        if ($query == null) {
-            return 0;
-        } else {
-            return 1;
+        $model = new DetailModel();
+        $temp = $model->setTable('details')->where('product_id=', $product_id);
+        if ($temp != null) {
+            $data = $temp->get()->getResultArray();
+            $id = $data[0]['id'];
+            $model->where('product_id=', $product_id)->delete($id, true);
         }
-
     }
+
 
     public function add_to_db()
     {
@@ -69,7 +74,7 @@ class Products extends Controller
             echo view('insert_product');
 
         } else {
-            ////////////////////////////
+
             $model = new ProductModel();
             if ($_POST['name_img'] == null) {
                 $name_img = 'none';
@@ -91,7 +96,7 @@ class Products extends Controller
                 //insert
                 $model->insert($data);
             }
-            echo view('insert_product');
+            $this->view_data();
         }
     }
 
@@ -106,6 +111,37 @@ class Products extends Controller
         } else {
             return 1;
         }
+    }
 
+    public function show_edit_product()
+    {
+        echo view('edit_product');
+    }
+
+    public function edit_product()
+    {
+        $id = $_GET['id_edit'];
+        $model = new ProductModel();
+        $all_product = $model->setTable('products')->where('id=', $id);
+        $query = $all_product->get();
+        return $query->getResultArray();
+    }
+
+    public function update_product()
+    {
+        $id = $_GET['edit_id_'];
+        $edit_product =
+            [
+                'id' => $id,
+                'name' => $_GET['edit_name'],
+                'quantity' => $_GET['edit_quantity'],
+                'price_import' => $_GET['edit_price_import'],
+                'price_export' => $_GET['edit_price_export'],
+                'image_name' => $_GET['edit_img_name'],
+                'note' => $_GET['edit_note']
+            ];
+        $model = new ProductModel();
+        $model->update($id, $edit_product);
+        $this->view_data();
     }
 }

@@ -6,8 +6,7 @@ use CodeIgniter\Model;
 class DetailModel extends Model
 {
     protected $table = 'details';
-    protected $primaryKey = 'id';
-
+    protected $primaryKey ='id';
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 

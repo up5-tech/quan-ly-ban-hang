@@ -6,7 +6,7 @@ class Details extends Controller
 {
     public function index()
     {
-        echo 'its details';
     }
+
 
 }

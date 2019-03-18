@@ -162,12 +162,23 @@
                                                   method="get">
                                                 <input hidden name="id_del" value="<?php echo $product['id']; ?>"><br>
                                                 <button type="submit" data-width="45" data-height="50">Xóa</button>
-                                                <br><br>
+                                                <br>
                                             </form>
+
+                                            <form action="http://localhost/quan-ly-ban-hang/public/index.php/products/show_edit_product"
+                                                  method="get">
+                                                <input hidden name="id_edit" value="<?php echo $product['id']; ?>"><br>
+                                                <button type="submit" data-width="45" data-height="50">Sửa</button>
+                                                <br>
+                                            </form>
+
                                         </td>
                                     </tr>
                                 <?php } ?>
                             </table>
+                            <!--- -------------------------------- -->
+
+                            <!--- -------------------------------- -->
                         </div>
                     </div>
                 </div>

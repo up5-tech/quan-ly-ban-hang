@@ -3,33 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>VNFOOD.VN</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../public/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../public/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/skins/_all-skins.min.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="../../public/bower_components/morris.js/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="../../public/bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../public/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../../public/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="../../public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 
-    <script src="dist/js/adminlte.min.js"></script>
+    <script src="../../public/dist/js/adminlte.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="../../public/favicon.ico"/>
 
     <!-- Google Font -->
 
@@ -49,11 +49,11 @@
 
     <header class="main-header">
 
-        <a href="<?php echo $bare_url; ?>" class="logo">
+        <a href="http://localhost/quan-ly-ban-hang/public/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>VNF</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>VNFood.vn</b></span>
+            <span class="logo-lg"><b>VNFOOD</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -78,7 +78,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
+<!--                                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle"-->
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -92,7 +92,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
+                                                <img src="../../dist/img/user3-128x128.jpg" class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -105,7 +105,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
+                                                <img src="../../dist/img/user4-128x128.jpg" class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -118,7 +118,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
+                                                <img src="../../dist/img/user3-128x128.jpg" class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -131,7 +131,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
+                                                <img src="../../dist/img/user4-128x128.jpg" class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -274,14 +274,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+<!--                            <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
                             <span class="hidden-xs">Admin NTC</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
+<!--                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
                                 <p>
                                     Alexander Pierce - Web Developer
                                     <small>Member since Nov. 2012</small>
@@ -328,11 +327,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <!-- search form -->
@@ -362,7 +360,7 @@
                     <ul class="treeview-menu">
                         <li><a href="#"><i
                                         class="fa fa-circle-o"></i>TẤT CẢ SP</a></li>
-                        <li><a href="<?php echo $bare_url; ?>index.php/products/insert_product"><i
+                        <li><a href="<?php echo $bare_url; ?>index.php/products/view_data"><i
                                         class="fa fa-circle-o"></i> CẬP NHẬT SẢN PHẨM</a></li>
                     </ul>
                 </li>
@@ -386,9 +384,9 @@
 </body>
 </html>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../public/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="../../public/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
