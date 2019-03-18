@@ -3,33 +3,39 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VNFOOD.VN</title>
+    <title>
+        VNFOOD.VN
+    </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="../../public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <?php $temp = new \Config\App;
+    $url = $temp->bare_url;
+    ?>
+    <link rel="stylesheet" href="<?php echo $url; ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../public/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="../../public/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../../public/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>dist/css/skins/_all-skins.min.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="../../public/bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>bower_components/morris.js/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="../../public/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="../../public/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+          href="<?php echo $url; ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="../../public/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="../../public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 
-    <script src="../../public/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo $url; ?>dist/js/adminlte.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +55,7 @@
 
     <header class="main-header">
 
-        <a href="http://localhost/quan-ly-ban-hang/public/" class="logo">
+        <a href="<?php echo $url; ?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>VNF</b></span>
             <!-- logo for regular state and mobile devices -->
@@ -78,8 +84,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-<!--                                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle"-->
-                                                     alt="User Image">
+                                                alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -105,7 +110,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="../../dist/img/user4-128x128.jpg" class="img-circle"
+                                                <img src="<?php echo $url; ?>dist/img/user4-128x128.jpg"
+                                                     class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -118,7 +124,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="../../dist/img/user3-128x128.jpg" class="img-circle"
+                                                <img src="<?php echo $url; ?>dist/img/user3-128x128.jpg"
+                                                     class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -131,7 +138,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="../../dist/img/user4-128x128.jpg" class="img-circle"
+                                                <img src="<?php echo $url; ?>dist/img/user4-128x128.jpg"
+                                                     class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -274,13 +282,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-<!--                            <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
+                            <!--                            <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
                             <span class="hidden-xs">Admin NTC</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-<!--                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
+                                <!--                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
                                 <p>
                                     Alexander Pierce - Web Developer
                                     <small>Member since Nov. 2012</small>
@@ -327,30 +335,16 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle">
+                    <img src="<?php echo $url; ?>dist/img/user2-160x160.jpg" class="img-circle">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
                 </div>
             </div>
-            <!-- search form -->
-            <!--        <form action="#" method="get" class="sidebar-form">-->
-            <!--            <div class="input-group">-->
-            <!--                <input type="text" name="q" class="form-control" placeholder="Search........">-->
-            <!--                <span class="input-group-btn">-->
-            <!--                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>-->
-            <!--                </button>-->
-            <!--              </span>-->
-            <!--            </div>-->
-            <!--        </form>-->
-            <!-- /.search form -->
-            <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Hệ Thống Quản Lý</li>
                 <li class="treeview">
                     <a href="">
-
-                        <!--                    <a href="http://localhost/quan-ly-ban-hang/public/index.php/products/index">-->
                         <i class="fa fa-files-o"></i>
                         <span>SẢN PHẨM</span>
                         <span class="pull-right-container">
@@ -360,7 +354,7 @@
                     <ul class="treeview-menu">
                         <li><a href="#"><i
                                         class="fa fa-circle-o"></i>TẤT CẢ SP</a></li>
-                        <li><a href="<?php echo $bare_url; ?>index.php/products/view_data"><i
+                        <li><a href="<?php echo $url; ?>index.php/products/view_data"><i
                                         class="fa fa-circle-o"></i> CẬP NHẬT SẢN PHẨM</a></li>
                     </ul>
                 </li>
@@ -384,9 +378,9 @@
 </body>
 </html>
 
-<script src="../../public/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo $url; ?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo $url; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="../../public/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="<?php echo $url; ?>bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->

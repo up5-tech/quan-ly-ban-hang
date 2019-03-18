@@ -5,20 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AdminLTE 2 | Data Tables</title>
     <!-- Tell the browser to be responsive to screen width -->
+    <?php $temp = new \Config\App;
+    $url = $temp->bare_url;
+    ?>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $url;?>bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $url;?>bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo $url;?>bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $url;?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo $url;?>dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<?php echo $url;?>dist/css/skins/_all-skins.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,9 +47,9 @@
                 <small>advanced tables</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+                <li><a href="<?php echo $url; ?>">Admin</a></li>
+                <li class="active"><a>Sản Phẩm</a></li>
             </ol>
         </section>
 
@@ -86,19 +89,19 @@
                                         <th><?php echo $product['quantity'] ?></th>
                                         <th><?php echo $product['price_import'] ?></th>
                                         <th><?php echo $product['price_export'] ?></th>
-                                        <th><img src="../../image/<?php echo $product['image_name'] ?>" width=75
+                                        <th><img src="<?php echo $url;?>image/<?php echo $product['image_name'] ?>" width=75
                                                  height=75><br>
                                             <?php echo $product['image_name'] ?></th>
                                         <th><?php echo $product['note'] ?></th>
                                         <th align="center">
-                                            <form action="http://localhost/quan-ly-ban-hang/public/index.php/products/delete_product"
+                                            <form action="<?php echo $url;?>index.php/products/delete_product"
                                                   method="get">
                                                 <input hidden name="id_del" value="<?php echo $product['id']; ?>"><br>
                                                 <button type="submit" data-width="45" data-height="50">Xóa</button>
                                                 <br>
                                             </form>
 
-                                            <form action="http://localhost/quan-ly-ban-hang/public/index.php/products/show_edit_product"
+                                            <form action="<?php echo $url;?>index.php/products/show_edit_product"
                                                   method="get">
                                                 <input hidden name="id_edit" value="<?php echo $product['id']; ?>"><br>
                                                 <button type="submit" data-width="45" data-height="50">Sửa</button>
@@ -129,7 +132,7 @@
                                     <!-- /.box-header -->
                                     <!-- form start -->
                                     <form role="form" method="POST"
-                                          action="http://localhost/quan-ly-ban-hang/public/index.php/products/add_to_db">
+                                          action="<?php echo $url;?>index.php/products/add_to_db">
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <label for="">Tên Sản Phẩm</label>
@@ -396,20 +399,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo $url;?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo $url;?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
-<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo $url;?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo $url;?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo $url;?>bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="<?php echo $url;?>bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="<?php echo $url;?>dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="<?php echo $url;?>dist/js/demo.js"></script>
 <!-- page script -->
 <script>
     $(function () {
