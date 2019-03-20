@@ -69,7 +69,6 @@
                                             <label for="">Tên Khách Hàng</label>
                                             <input type="text" class="form-control" name="cus_name">
                                         </div>
-
                                         <div class="form-group">
                                             <label for="">Địa Chỉ</label>
                                             <input type="text"
