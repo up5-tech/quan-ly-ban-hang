@@ -35,18 +35,19 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                THÊM SẢN PHẨM <a class="fa  fa-bars" href="<?php echo $url;?>index.php/products/view_all_product"></a>
+                TẤT CẢ SẢN PHẨM <a class="fa  fa-plus-square" href="<?php echo $url;?>index.php/products/add_data"></a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
                 <li><a href="<?php echo $url; ?>">Admin</a></li>
-                <li class="active"><a>Thêm Sản Phẩm</a></li>
+                <li class="active"><a>Sản Phẩm</a></li>
             </ol>
         </section>
 
@@ -54,80 +55,65 @@
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-
                     <div class="box">
+
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <div class="col-md-12">
-                                <!-- general form elements -->
-                                <div class="box-header with-border">
-                                    <u><h4 align="left">THÊM SẢN PHẨM</h4></u>
-                                </div>
-                                <form role="form" method="POST"
-                                      action="<?php echo $url; ?>index.php/products/add_to_db">
-                                    <div class="box-body">
-                                        <div class="form-group">
-                                            <label for="">Tên Sản Phẩm</label>
-                                            <input type="text" class="form-control" name="name">
-                                        </div>
+                            <table id="example2" class="table table-bordered table-hover" border="5">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>TÊN SẢN PHẨM</th>
+                                    <th>SỐ LƯỢNG</th>
+                                    <th>GIÁ NHẬP</th>
+                                    <th>GIÁ XUẤT</th>
+                                    <th>ẢNH</th>
+                                    <th>GHI CHÚ</th>
+                                    <th>CHỨC NĂNG</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $model = new \App\Controllers\Products();
+                                $show_product = $model->show_all_product();
+                                foreach ($show_product
+                                         as $product) {
+                                    ?>
+                                    <tr>
+                                        <th><?php echo $product['id'] ?></th>
+                                        <th><?php echo $product['name'] ?></th>
+                                        <th><?php echo $product['quantity'] ?></th>
+                                        <th><?php echo $product['price_import'] ?></th>
+                                        <th><?php echo $product['price_export'] ?></th>
+                                        <th><img src="<?php echo $url; ?>image/<?php echo $product['image_name'] ?>"
+                                                 width=75
+                                                 height=75><br>
+                                            <?php echo $product['image_name'] ?></th>
+                                        <th><?php echo $product['note'] ?></th>
+                                        <th align="center">
+                                            <form action="<?php echo $url; ?>index.php/products/delete_product"
+                                                  method="get">
+                                                <input hidden name="id_del" value="<?php echo $product['id']; ?>"><br>
+                                                <button type="submit" class="fa fa-trash" data-width="45"
+                                                        data-height="50" title="Xóa"></button>
+                                                <br>
+                                            </form>
 
-                                        <div class="form-group">
-                                            <label for="">Số Lượng</label>
-                                            <input type="text" onkeypress=" return isNumberKey(event)"
-                                                   class="form-control"
-                                                   name="quantity">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="">Giá Nhập</label>
-                                            <input type="text" onkeypress=" return isNumberKey(event)"
-                                                   class="form-control"
-                                                   name="price_import">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="">Giá Bán</label>
-                                            <input type="text" onkeypress=" return isNumberKey(event)"
-                                                   class="form-control"
-                                                   name="price_export">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="">Ghi Chú</label>
-                                            <input type="text" class="form-control" name="note">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="name_img">Ảnh</label>
-                                            <input type="file" id="name_img" name="images[]" multiple/>
-                                            <p class="help-block">Ảnh sản phẩm</p>
-                                        </div>
-
-                                        <div class="box-footer">
-
-                                            <button type="submit" class="btn btn-primary" onclick="">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <script>
-                                    function isNumberKey(evt) {
-                                        var charCode = (evt.which) ? evt.which : event.keyCode;
-                                        if (charCode == 59 || charCode == 46)
-                                            return true;
-                                        if (charCode > 31 && (charCode < 48 || charCode > 57))
-                                            return false;
-                                        return true;
-                                    }
-                                </script>
-                            </div>
-                            <!-- /.box-body -->
+                                            <form action="<?php echo $url; ?>index.php/products/show_edit_product"
+                                                  method="get">
+                                                <input hidden name="id_edit" value="<?php echo $product['id']; ?>"><br>
+                                                <button type="submit" class="fa fa-pencil" data-width="45"
+                                                        data-height="50" title="Chỉnh Sửa"></button>
+                                                <br>
+                                            </form>
+                                        </th>
+                                    </tr>
+                                <?php } ?>
+                                </tfoot>
+                            </table>
                         </div>
-                        <!-- /.box -->
+                        <!-- /.box-body -->
                     </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>

@@ -352,24 +352,28 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i
+                        <li><a href="<?php echo $url; ?>index.php/products/view_all_product"><i
                                         class="fa fa-circle-o"></i>TẤT CẢ SP</a></li>
-                        <li><a href="<?php echo $url; ?>index.php/products/view_data"><i
-                                        class="fa fa-circle-o"></i> CẬP NHẬT SẢN PHẨM</a></li>
+                        <li><a href="<?php echo $url; ?>index.php/products/add_data"><i
+                                        class="fa fa-circle-o"></i> THÊM SẢN PHẨM</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-th"></i> <span>THỐNG KÊ</span>
+
+
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-users"></i>
+                        <span>KHÁCH HÀNG</span>
                         <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
             </span>
                     </a>
-                </li>
-                <li class="">
-                    <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>DOANH SỐ</span>
-                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i
+                                        class="fa fa-tasks"></i>DANH SÁCH KHÁCH HÀNG</a></li>
+                        <li><a href="#"><i
+                                        class="fa  fa-user-plus"></i>THÊM KHÁC HÀNG</a></li>
+                    </ul>
                 </li>
 
         </section>
