@@ -41,7 +41,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                THÊM KHÁCH HÀNG
+                THÊM KHÁCH HÀNG <a class="fa  fa-bars" href="<?php echo $url;?>index.php/customers/show_all_customer"></a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>

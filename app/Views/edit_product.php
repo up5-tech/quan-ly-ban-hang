@@ -64,7 +64,7 @@
                                 <!-- /.box-header -->
                                 <!-- form start -->
                                 <form method="get"
-                                      action="http://localhost/quan-ly-ban-hang/public/index.php/products/update_product">
+                                      action="<?php echo $url; ?>index.php/products/update_product">
                                     <div class="box-body">
                                         <?php
                                         $model = new \App\Controllers\Products();
@@ -73,7 +73,7 @@
                                         <div class="form-group">
                                             <label for="">ID</label>
                                                 <input name='edit_id_' class="form-control" type='number'
-                                                   value="<?php echo $_product['id'];?>"> <?php echo $_product['id'];?>
+                                                   value="<?php echo $_product['id'];?>" readonly>
                                         </div>
 
                                         <div class="form-group">

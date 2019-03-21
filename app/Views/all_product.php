@@ -85,9 +85,7 @@
                                         <th><?php echo $product['quantity'] ?></th>
                                         <th><?php echo $product['price_import'] ?></th>
                                         <th><?php echo $product['price_export'] ?></th>
-                                        <th><img src="<?php echo $url; ?>image/<?php echo $product['image_name'] ?>"
-                                                 width=75
-                                                 height=75><br>
+                                        <th><img src="<?php echo $url; ?>image/<?php echo $product['image_name'] ?>" width=75 height=75><br>
                                             <?php echo $product['image_name'] ?></th>
                                         <th><?php echo $product['note'] ?></th>
                                         <th align="center">
