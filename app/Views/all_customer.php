@@ -42,7 +42,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                TẤT CẢ KHÁCH HÀNG <a class="fa  fa-plus-square" href="<?php echo $url; ?>"></a>
+                TẤT CẢ KHÁCH HÀNG <a class="fa  fa-plus-square" href="<?php echo $url; ?>index.php/customers/show_add_customer"></a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
@@ -64,37 +64,42 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>TÊN KHÁCH HÀNG</th>
-                                    <th>SỐ LƯỢNG</th>
                                     <th>ĐỊA CHỈ</th>
                                     <th>SĐT</th>
                                     <th>SỐ ĐƠN HÀNG</th>
                                     <th>CHỨC NĂNG</th>
                                 </tr>
                                 </thead><tbody>
+                                <?php
+                                $model = new \App\Controllers\Customers();
+                                $_customer = $model->get_all_customer();
+                                foreach ($_customer
+                                         as $customer){
+                                    ?>
                                 <tr>
-                                    <th>ADMIN</th>
-                                    <th>STEVE</th>
-                                    <th>100</th>
-                                    <th>TP HCM</th>
-                                    <th>0375579997</th>
-                                    <th>321</th>
+                                    <th><?php echo $customer['id']; ?></th>
+                                    <th><?php echo $customer['name']; ?></th>
+                                    <th><?php echo $customer['address']; ?></th>
+                                    <th><?php echo $customer['tel']; ?></th>
+                                    <th>LAST UPDATE</th>
                                     <th align="center">
                                         <form action=""
                                               method="get">
-                                            <input hidden name="id_cus_del" value=""><br>
+                                            <input hidden name="id_cus_del" value="<?php echo $customer['id']; ?>"><br>
                                             <button type="submit" class="fa fa-trash" data-width="45"
                                                     data-height="50" title="Xóa"></button>
                                             <br>
                                         </form>
                                         <form action=""
                                               method="get">
-                                            <input hidden name="id_cus_edit" value=""><br>
+                                            <input hidden name="id_cus_edit" value="<?php echo $customer['id']; ?>"><br>
                                             <button type="submit" class="fa fa-pencil" data-width="45"
                                                     data-height="50" title="Chỉnh Sửa"></button>
                                             <br>
                                         </form>
                                     </th>
                                 </tr>
+                                <?php } ?>
                                 </tfoot>
                             </table>
                         </div>

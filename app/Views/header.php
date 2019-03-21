@@ -369,9 +369,9 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i
+                        <li><a href="<?php echo $url; ?>index.php/customers/show_all_customer"><i
                                         class="fa fa-tasks"></i>DANH SÁCH KHÁCH HÀNG</a></li>
-                        <li><a href="#"><i
+                        <li><a href="<?php echo $url; ?>index.php/customers/show_add_customer"><i
                                         class="fa  fa-user-plus"></i>THÊM KHÁC HÀNG</a></li>
                     </ul>
                 </li>
