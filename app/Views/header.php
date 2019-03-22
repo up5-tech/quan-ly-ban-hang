@@ -97,7 +97,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="../../dist/img/user3-128x128.jpg" class="img-circle"
+                                                <img src="<?php echo $url; ?>dist/img/user3-128x128.jpg" class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -283,7 +283,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!--                            <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
-                            <span class="hidden-xs">Admin NTC</span>
+                            <span class="hidden-xs">Tiểu Ca</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -345,7 +345,7 @@
                 <li class="header">Hệ Thống Quản Lý</li>
                 <li class="treeview">
                     <a href="">
-                        <i class="fa fa-files-o"></i>
+                        <i class="fa fa-th"></i>
                         <span>SẢN PHẨM</span>
                         <span class="pull-right-container">
               <span class="label label-primary pull-right"></span>
