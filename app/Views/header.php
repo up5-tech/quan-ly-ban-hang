@@ -97,7 +97,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="<?php echo $url; ?>dist/img/user3-128x128.jpg" class="img-circle"
+                                                <img src="<?php echo $url; ?>dist/img/user3-128x128.jpg"
+                                                     class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -359,6 +360,8 @@
                     </ul>
                 </li>
 
+                <!-- =================================================================================================== -->
+
 
                 <li class="treeview">
                     <a href="">
@@ -373,6 +376,24 @@
                                         class="fa fa-tasks"></i>DANH SÁCH KHÁCH HÀNG</a></li>
                         <li><a href="<?php echo $url; ?>index.php/customers/show_add_customer"><i
                                         class="fa  fa-user-plus"></i>THÊM KHÁC HÀNG</a></li>
+                    </ul>
+                </li>
+
+                <!-- =================================================================================================== -->
+
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-user-secret"></i>
+                        <span>NHÂN VIÊN</span>
+                        <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo $url;?>index.php/users/show_all_user"><i
+                                        class="fa fa-tasks"></i>DANH SÁCH NHÂN VIÊN</a></li>
+                        <li><a href=""><i
+                                        class="fa  fa-user-plus"></i>THÊM NHÂN VIÊN</a></li>
                     </ul>
                 </li>
 
