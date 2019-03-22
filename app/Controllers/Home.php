@@ -8,7 +8,6 @@ class Home extends Controller
     {
         echo view('header');
         echo view('main');
-
     }
 
 }

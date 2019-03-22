@@ -6,6 +6,7 @@ class Orders extends Controller
 {
     public function index()
     {
+
     }
 
     public function count_bill()
@@ -14,6 +15,7 @@ class Orders extends Controller
         $count=$model->countAll();
         return $count;
     }
+
     public function sum_total()
     {
         $model=new OrderModel();
@@ -21,4 +23,6 @@ class Orders extends Controller
         $sum=$query['total'];
         return $sum;
     }
+
+
 }

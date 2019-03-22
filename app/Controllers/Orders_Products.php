@@ -6,7 +6,6 @@ class Orders_Products extends Controller
 {
     public function index()
     {
+
     }
-
-
 }

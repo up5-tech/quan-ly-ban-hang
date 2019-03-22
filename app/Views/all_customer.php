@@ -66,7 +66,6 @@
                                     <th>TÊN KHÁCH HÀNG</th>
                                     <th>ĐỊA CHỈ</th>
                                     <th>SĐT</th>
-                                    <th>SỐ ĐƠN HÀNG</th>
                                     <th>CHỨC NĂNG</th>
                                 </tr>
                                 </thead><tbody>
@@ -81,7 +80,6 @@
                                     <th><?php echo $customer['name']; ?></th>
                                     <th><?php echo $customer['address']; ?></th>
                                     <th><?php echo $customer['tel']; ?></th>
-                                    <th>LAST UPDATE</th>
                                     <th align="center">
                                         <form action="<?php echo $url;?>index.php/customers/delete_customer"
                                               method="get">
