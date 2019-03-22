@@ -14,4 +14,11 @@ class Orders extends Controller
         $count=$model->countAll();
         return $count;
     }
+    public function sum_total()
+    {
+        $model=new OrderModel();
+        $query=$model->selectSum('total')->get()->getRowArray();
+        $sum=$query['total'];
+        return $sum;
+    }
 }

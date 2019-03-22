@@ -125,7 +125,11 @@
                     <!-- small box -->
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3>$6969</h3>
+                            <?php
+                            $model = new \App\Controllers\Orders();
+                            $total = $model->sum_total();
+                            ?>
+                            <h3><?php echo $total;?> vnd</h3>
 
                             <p>Doanh Thu</p>
                         </div>
