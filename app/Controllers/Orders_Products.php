@@ -2,7 +2,7 @@
 
 use CodeIgniter\Controller;
 
-class Details extends Controller
+class Orders_Products extends Controller
 {
     public function index()
     {

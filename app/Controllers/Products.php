@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\DetailModel;
+use App\Models\Orders_ProductsModel;
 use App\Models\ProductModel;
 use CodeIgniter\Controller;
 
@@ -11,14 +11,7 @@ class Products extends Controller
 {
     public function index()
     {
-        $show_product = $this->show_all_product();
-        $count_product = $this->count_product();
-        $edit_product = $this->edit_product();
-    }
 
-    public function insert_product() //display
-    {
-        echo view('insert_product');
     }
 
     public function count_product()
@@ -34,7 +27,7 @@ class Products extends Controller
         echo view('all_product');
     }
 
-    public function show_all_product()
+    public function get_all_product()
     {
         $model = new ProductModel();
         $builder = $model->setTable('products');
@@ -64,8 +57,8 @@ class Products extends Controller
 
     public function delete_detail($product_id) // xóa product trong details
     {
-        $model = new DetailModel();
-        $temp = $model->setTable('details')->where('product_id=', $product_id);
+        $model = new Orders_ProductsModel();
+        $temp = $model->setTable('orders_products')->where('product_id=', $product_id);
         if ($temp != null) {
             $data = $temp->get()->getRowArray();
             $id = $data['id'];
@@ -76,8 +69,7 @@ class Products extends Controller
     public function add_to_db()
     {
         if ($_POST['name'] == null) {
-            echo view('insert_product');
-
+            $this->add_data();
         } else {
 
             $model = new ProductModel();
@@ -139,7 +131,7 @@ class Products extends Controller
         if ($_GET['edit_name_img'] == null) {
             $name_img = 'none';
         } else {
-            $name_img = time() .$_GET['edit_name_img'];
+            $name_img = time() . $_GET['edit_name_img'];
         }
         $edit_product =
             [

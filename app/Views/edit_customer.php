@@ -42,12 +42,15 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                TẤT CẢ SẢN PHẨM <a class="fa  fa-plus-square" href="<?php echo $url;?>index.php/products/add_data"></a>
+                <a class="fa fa-backward" href="<?php echo $url; ?>index.php/customers/show_all_customer"></a> CẬP NHẬT
+                THÔNG TIN KHÁCH HÀNG
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
                 <li><a href="<?php echo $url; ?>">Admin</a></li>
-                <li class="active"><a>Sản Phẩm</a></li>
+                <li class="active"><a>Khách Hàng</a></li>
+                <li class="active"><a>Cập Nhật Thông Tin Khách Hàng</a></li>
+
             </ol>
         </section>
 
@@ -55,63 +58,75 @@
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="box">
 
+                    <div class="box">
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="example2" class="table table-bordered table-hover" border="5">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>TÊN SẢN PHẨM</th>
-                                    <th>SỐ LƯỢNG</th>
-                                    <th>GIÁ NHẬP</th>
-                                    <th>GIÁ XUẤT</th>
-                                    <th>ẢNH</th>
-                                    <th>GHI CHÚ</th>
-                                    <th>CHỨC NĂNG</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $model = new \App\Controllers\Products();
-                                $show_product = $model->get_all_product();
-                                foreach ($show_product
-                                         as $product) {
-                                    ?>
-                                    <tr>
-                                        <th><?php echo $product['id'] ?></th>
-                                        <th><?php echo $product['name'] ?></th>
-                                        <th><?php echo $product['quantity'] ?></th>
-                                        <th><?php echo $product['price_import'] ?></th>
-                                        <th><?php echo $product['price_export'] ?></th>
-                                        <th><img src="<?php echo $url; ?>image/<?php echo $product['image_name'] ?>" width=75 height=75><br>
-                                            <?php echo $product['image_name'] ?></th>
-                                        <th><?php echo $product['note'] ?></th>
-                                        <th align="center">
-                                            <form action="<?php echo $url; ?>index.php/products/delete_product"
-                                                  method="get">
-                                                <input hidden name="id_del" value="<?php echo $product['id']; ?>"><br>
-                                                <button type="submit" class="fa fa-trash" data-width="45"
-                                                        data-height="50" title="Xóa"></button>
-                                                <br>
-                                            </form>
+                            <div class="col-md-12">
+                                <!-- general form elements -->
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <form method="GET"
+                                      action="<?php echo $url; ?>index.php/customers/update_customer">
+                                    <div class="box-body">
+                                        <?php
+                                        $model = new \App\Controllers\Customers();
+                                        $customer = $model->get_customer_edit();
+                                        ?>
+                                        <div class="form-group">
+                                            <label for="">ID</label>
+                                            <input name='cus_id_update' class="form-control" type='number'
+                                                   value="<?php echo $customer['id'] ?>" readonly>
+                                        </div>
 
-                                            <form action="<?php echo $url; ?>index.php/products/show_edit_product"
-                                                  method="get">
-                                                <input hidden name="id_edit" value="<?php echo $product['id']; ?>"><br>
-                                                <button type="submit" class="fa fa-pencil" data-width="45"
-                                                        data-height="50" title="Chỉnh Sửa"></button>
-                                                <br>
-                                            </form>
-                                        </th>
-                                    </tr>
-                                <?php } ?>
-                                </tfoot>
-                            </table>
+                                        <div class="form-group">
+                                            <label for="">Tên Khách Hàng</label>
+                                            <td>
+                                                <input name='cus_name_update' class="form-control" type='text'
+                                                       value="<?php echo $customer['name'] ?>">
+                                            </td>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Địa Chỉ</label>
+                                            <td>
+                                                <input type="text" value="<?php echo $customer['address'] ?>"
+                                                       class="form-control"
+                                                       name="cus_address_update">
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">SĐT</label>
+                                            <input type="text" value="<?php echo $customer['tel'] ?>"
+                                                   onkeypress=" return isNumberKey(event)"
+                                                   class="form-control"
+                                                   name="cus_tel_update">
+                                        </div>
+
+                                        <div class="box-footer">
+
+                                            <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <script>
+                                    function isNumberKey(evt) {
+                                        var charCode = (evt.which) ? evt.which : event.keyCode;
+                                        if (charCode == 59 || charCode == 46)
+                                            return true;
+                                        if (charCode > 31 && (charCode < 48 || charCode > 57))
+                                            return false;
+                                        return true;
+                                    }
+                                </script>
+                            </div>
+                            <!-- /.box-body -->
                         </div>
-                        <!-- /.box-body -->
+                        <!-- /.box -->
                     </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>

@@ -3,9 +3,9 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class DetailModel extends Model
+class Orders_ProductsModel extends Model
 {
-    protected $table = 'details';
+    protected $table = 'orders_products';
     protected $primaryKey ='id';
     protected $returnType = 'array';
     protected $useSoftDeletes = true;

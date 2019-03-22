@@ -1,17 +1,16 @@
 <?php
 namespace App\Controllers;
-use App\Models\BillModel;
+use App\Models\OrderModel;
 use CodeIgniter\Controller;
-class Bills extends Controller
+class Orders extends Controller
 {
     public function index()
     {
-        $count_bill=$this->count_bill();
     }
 
     public function count_bill()
     {
-        $model=new BillModel();
+        $model=new OrderModel();
         $count=$model->countAll();
         return $count;
     }

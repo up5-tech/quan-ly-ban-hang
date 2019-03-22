@@ -3,9 +3,9 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class BillModel extends Model
+class OrderModel extends Model
 {
-    protected $table = 'bills';
+    protected $table = 'orders';
     protected $primaryKey = 'id';
 
     protected $returnType = 'array';

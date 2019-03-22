@@ -83,14 +83,14 @@
                                     <th><?php echo $customer['tel']; ?></th>
                                     <th>LAST UPDATE</th>
                                     <th align="center">
-                                        <form action=""
+                                        <form action="<?php echo $url;?>index.php/customers/delete_customer"
                                               method="get">
                                             <input hidden name="id_cus_del" value="<?php echo $customer['id']; ?>"><br>
                                             <button type="submit" class="fa fa-trash" data-width="45"
                                                     data-height="50" title="Xóa"></button>
                                             <br>
                                         </form>
-                                        <form action=""
+                                        <form action="<?php echo $url;?>index.php/customers/show_update_customer"
                                               method="get">
                                             <input hidden name="id_cus_edit" value="<?php echo $customer['id']; ?>"><br>
                                             <button type="submit" class="fa fa-pencil" data-width="45"
