@@ -392,7 +392,7 @@
                     <ul class="treeview-menu">
                         <li><a href="<?php echo $url;?>index.php/users/show_all_user"><i
                                         class="fa fa-tasks"></i>DANH SÁCH NHÂN VIÊN</a></li>
-                        <li><a href=""><i
+                        <li><a href="<?php echo $url;?>index.php/users/show_add_user"><i
                                         class="fa  fa-user-plus"></i>THÊM NHÂN VIÊN</a></li>
                     </ul>
                 </li>

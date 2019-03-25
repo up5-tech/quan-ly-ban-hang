@@ -67,18 +67,26 @@ class Customers extends Controller
     {
         $id = $_GET['id_cus_del'];
         $order_model = new OrderModel();
-        $data = $order_model->setTable('orders')->where('cus_id=', $id)->get()->getRowArray();
-        $order_id = $data['id']; // order_id của cus $id
-        $order_product_model = new Orders_ProductsModel();
-        $ck = $order_product_model->setTable('orders_products')->where('id=', $order_id)->get()->getRowArray();
-        if (isset($ck)) {
-            $order_product_model->delete($order_id, true); //xó trong order_product
+        $data = $order_model->setTable('orders')->where('cus_id=', $id)->get()->getResultArray();
+        $count = count($data);
+        $arr = array($count);
+        for ($i = 0; $i < $count; $i++) {
+            $arr[$i] = $data[$i]['id'];
         }
 
-        $order_model->delete($order_id, true);
+        $order_product_model = new Orders_ProductsModel();
+        for ($i = 0; $i < $count; $i++) {
+            $ck = $order_product_model->setTable('orders_products')->where('id=', $arr[$i])->get()->getRowArray();
+            if (isset($ck)) {
+                $order_product_model->delete($arr[$i], true); //xóa trong order_product
+            }
+
+            $order_model->delete($arr[$i], true);
+        }
         $cus_model = new CustomerModel();
         $cus_model->delete($id, true);
         $this->show_all_customer();
+
     }
 
     public function get_customer_edit()

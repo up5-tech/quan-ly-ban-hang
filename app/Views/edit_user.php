@@ -42,12 +42,15 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                TẤT CẢ NHÂN VIÊN <a class="fa  fa-plus-square" href="<?php echo $url; ?>index.php/users/show_add_user"></a>
+                <a class="fa fa-backward" href="<?php echo $url; ?>index.php/users/show_all_user"></a> CẬP NHẬT
+                THÔNG TIN NHÂN VIÊN
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
                 <li><a href="<?php echo $url; ?>">Admin</a></li>
                 <li class="active"><a>Nhân Viên</a></li>
+                <li class="active"><a>Cập Nhật Thông Tin Nhân Viên</a></li>
+
             </ol>
         </section>
 
@@ -55,56 +58,78 @@
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="box">
 
+                    <div class="box">
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="example2" class="table table-bordered table-hover" border="5">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>TÊN NHÂN VIÊN</th>
-                                    <th>ĐỊA CHỈ</th>
-                                    <th>SĐT</th>
-                                    <th>CHỨC NĂNG</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $model = new \App\Controllers\Users();
-                                $_user = $model->get_all_user();
-                                foreach ($_user as $user) {
-                                    ?>
-                                    <tr>
-                                        <th><?php echo $user['id']; ?></th>
-                                        <th><?php echo $user['name']; ?></th>
-                                        <th><?php echo $user['address']; ?></th>
-                                        <th><?php echo $user['tel']; ?></th>
-                                        <th align="center">
-                                            <form action="<?php echo $url;?>index.php/users/delete_user"
-                                                  method="get">
-                                                <input hidden name="id_user_del" value="<?php echo $user['id'];?>"><br>
-                                                <button type="submit" class="fa fa-trash" data-width="45"
-                                                        data-height="50" title="Xóa"></button>
-                                                <br>
-                                            </form>
+                            <div class="col-md-12">
+                                <!-- general form elements -->
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <form method="GET"
+                                      action="<?php echo $url;?>index.php/users/update_user">
+                                    <div class="box-body">
+                                        <?php
+                                        $model = new \App\Controllers\Users();
+                                        $user = $model->get_edit_user();
+                                        ?>
+                                        <div class="form-group">
+                                            <label for="">ID</label>
+                                            <input name='user_id_update' class="form-control" type='number'
+                                                   value="<?php echo $user['id']; ?>" readonly>
+                                        </div>
 
-                                            <form action="<?php echo $url;?>index.php/users/show_edit_user"
-                                                  method="get">
-                                                <input hidden name="id_user_edit" value="<?php echo $user['id']; ?>"><br>
-                                                <button type="submit" class="fa fa-pencil" data-width="45"
-                                                        data-height="50" title="Chỉnh Sửa"></button>
-                                                <br>
+                                        <div class="form-group">
+                                            <label for="">Tên Nhân Viên</label>
+                                            <td>
+                                                <input name='user_name_update' class="form-control" type='text'
+                                                       value="<?php echo $user['name'] ?>">
+                                            </td>
+                                        </div>
 
-                                            </form>
-                                        </th>
-                                    </tr>
-                                <?php } ?>
-                            </table>
+                                        <div class="form-group">
+                                            <label for="">Địa Chỉ</label>
+                                            <td>
+                                                <input type="text" value="<?php echo $user['address'] ?>"
+                                                       class="form-control"
+                                                       name="user_address_update">
+                                            </td>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Liên Hệ</label>
+                                            <input type="text" value="<?php echo $user['tel'] ?>"
+                                                   onkeypress=" return isNumberKey(event)"
+                                                   class="form-control"
+                                                   name="user_tel_update">
+                                        </div>
+
+                                        <div class="box-footer">
+                                            <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <script>
+                                    function isNumberKey(evt) {
+                                        var charCode = (evt.which) ? evt.which : event.keyCode;
+                                        if (charCode == 59 || charCode == 46)
+                                            return true;
+                                        if (charCode > 31 && (charCode < 48 || charCode > 57))
+                                            return false;
+                                        return true;
+                                    }
+                                </script>
+                            </div>
+                            <!-- /.box-body -->
                         </div>
+                        <!-- /.box -->
                     </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
         </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.4.0
