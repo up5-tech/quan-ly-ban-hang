@@ -41,7 +41,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                THÊM NHÂN VIÊN <a class="fa  fa-bars" href="<?php echo $url;?>index.php/users/show_all_user"></a>
+                THÊM NHÂN VIÊN <a class="fa  fa-bars" href="<?php echo $url;?>index.php/users/show_all_user" title="Tất cả nhân viên"></a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>

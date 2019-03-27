@@ -43,12 +43,8 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<div class="wrapper">
-
-    <!-- Logo -->
-    <!-- Content Wrapper. Contains page content -->
+<div class="">
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
                 THÔNG TIN CHUNG
@@ -129,7 +125,7 @@
                             $model = new \App\Controllers\Orders();
                             $total = $model->sum_total();
                             ?>
-                            <h3><?php echo $total;?> vnd</h3>
+                            <h3><?php echo $total; ?> vnd</h3>
 
                             <p>Doanh Thu</p>
                         </div>

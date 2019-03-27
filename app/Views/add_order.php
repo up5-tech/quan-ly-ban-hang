@@ -53,12 +53,10 @@
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-
                     <div class="box">
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="col-md-12">
-                                <!-- general form elements -->
                                 <div class="box-header with-border">
                                     <u><h4 align="left">TẠO ĐƠN</h4></u>
                                 </div>
@@ -97,16 +95,92 @@
                                     </tr>
                                 </table>
                                 <!-- ================================================================== -->
+                                    <section class="content">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="box">
+                                                    <div class="box-body">
+                                                        <form action="<?php echo $url;?>" method="get">
+                                                            <table id="tblEntAttributes"
+                                                                   class="table table-bordered table-hover"
+                                                                   align="left"
+                                                                   border="5">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>STT</th>
+                                                                    <th>SẢN PHẨM</th>
+                                                                    <th>SỐ LƯỢNG</th>
+                                                                    <th>GIÁ</th>
+                                                                </tr>
 
+                                                                </thead>
+                                                                <tbody>
+                                                            </table>
+                                                            <input type="submit" value="Lưu" align="left">
+                                                        </form>
+                                                        <br>
+                                                        <button id="add_btn" title="Thêm"><a class="fa fa-plus"></a></button>
+                                                    </div>
+                                                </div>
+                                    </section>
                                 <!-- ================================================================== -->
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+                                <script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
+                                <script src="https://code.jquery.com/jquery.min.js"></script>
+                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</html>
+<script>
+    var count = 1;
+    window.addEventListener('load', function () {
+        var compiledRow = _.template("<tr><td><%= count %></td><td><select name=\"<%= proName %>\" onchange=\"validateSelectBox(this)\"><?php
+            $model = new App\Controllers\Products();
+            $name='SP210';
+            $_products = $model->get_all_product();
+            foreach ($_products as $product){
+            ?> <option><?php echo $product['name'];?> </option> <?php
+            }
+            ?></td><td><input name=\"<%= proQuantity %>\" type=\"number\" min=\"1\"></td><td><input name=\"<%= proPrice %>\" value=\"<?php
+
+                                $model = new \App\Controllers\Products();
+                                $price=$model->get_product_price($name);
+                                print_r($price['price_export']);
+            ?>\"></td></tr>");
+        document.getElementById('add_btn').addEventListener('click', function (e) {
+            var ajaxData =
+                {
+                    'proName': 'name' + count,
+                    'proQuantity': 'quantity' + count,
+                    'proPrice': 'price' + count
+                }
+            var tableRowData = compiledRow(ajaxData);
+            $("#tblEntAttributes tbody").append(tableRowData);
+            count++;
+        });
+    });
+
+     function validateSelectBox(obj) {
+        var options = obj.children;
+
+        var html = '';
+
+        // lặp qua từng option và kiểm tra thuộc tính selected
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].selected) {
+                html += '<li>' + options[i].value + '</li>';
+            }
+        }
+        return html;
+    }
+</script>
+<!-- ================================================================== -->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">

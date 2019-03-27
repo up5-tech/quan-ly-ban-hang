@@ -147,4 +147,11 @@ class Products extends Controller
         $model->update($id, $edit_product);
         $this->view_all_product();
     }
+
+    public function get_product_price($name)
+    {
+        $model=new ProductModel();
+        $price=$model->setTable('products')->select('price_export')->where('name=',$name)->get()->getRowArray();
+        return $price;
+    }
 }

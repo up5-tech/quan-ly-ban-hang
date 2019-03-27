@@ -345,7 +345,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Hệ Thống Quản Lý</li>
                 <li class="treeview">
-                    <a href="">
+                    <a href="#">
                         <i class="fa fa-th"></i>
                         <span>SẢN PHẨM</span>
                         <span class="pull-right-container">
@@ -364,7 +364,7 @@
 
 
                 <li class="treeview">
-                    <a href="">
+                    <a href="#">
                         <i class="fa fa-users"></i>
                         <span>KHÁCH HÀNG</span>
                         <span class="pull-right-container">
@@ -382,7 +382,7 @@
                 <!-- =================================================================================================== -->
 
                 <li class="treeview">
-                    <a href="">
+                    <a href="#">
                         <i class="fa fa-user-secret"></i>
                         <span>NHÂN VIÊN</span>
                         <span class="pull-right-container">
@@ -396,6 +396,23 @@
                                         class="fa  fa-user-plus"></i>THÊM NHÂN VIÊN</a></li>
                     </ul>
                 </li>
+                <!-- =================================================================================================== -->
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>ĐƠN HÀNG</span>
+                        <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i
+                                        class="fa fa-tasks"></i>TẤT CẢ ĐƠN HÀNG</a></li>
+                        <li><a href="<?php echo $url;?>index.php/orders/show_add_order"><i
+                                        class="fa fa-cart-plus"></i>THÊM ĐƠN HANG</a></li>
+                    </ul>
+                </li>
+                <!-- =================================================================================================== -->
 
         </section>
         <!-- /.sidebar -->

@@ -36,13 +36,13 @@
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="">
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                TẤT CẢ NHÂN VIÊN <a class="fa  fa-plus-square" href="<?php echo $url; ?>index.php/users/show_add_user"></a>
+                TẤT CẢ NHÂN VIÊN <a class="fa  fa-plus-square" href="<?php echo $url; ?>index.php/users/show_add_user" title="Thêm nhân viên"></a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>

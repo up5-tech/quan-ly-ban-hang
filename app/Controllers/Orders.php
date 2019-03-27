@@ -24,5 +24,10 @@ class Orders extends Controller
         return $sum;
     }
 
+    public function show_add_order()
+    {
+        echo view('header');
+        echo view('add_order');
+    }
 
 }
